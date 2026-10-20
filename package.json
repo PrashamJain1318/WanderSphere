@@ -1,0 +1,24 @@
+{
+  "name": "wandersphere",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@11.24.0",
+  "scripts": {
+    "dev": "pnpm --parallel --filter @wandersphere/api --filter @wandersphere/web dev",
+    "dev:api": "pnpm --filter @wandersphere/api dev",
+    "dev:web": "pnpm --filter @wandersphere/web dev",
+    "build": "pnpm --filter @wandersphere/contracts build && pnpm --filter @wandersphere/budget-engine build && pnpm --filter @wandersphere/api build && pnpm --filter @wandersphere/web build",
+    "lint": "pnpm --filter @wandersphere/contracts lint && pnpm --filter @wandersphere/budget-engine lint && pnpm --filter @wandersphere/api lint && pnpm --filter @wandersphere/web lint",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,mjs,json,md,css}\"",
+    "format": "prettier --write \"**/*.{ts,tsx,js,mjs,json,md,css}\"",
+    "test": "pnpm --filter @wandersphere/budget-engine test && pnpm --filter @wandersphere/api test",
+    "typecheck": "pnpm --filter @wandersphere/contracts typecheck && pnpm --filter @wandersphere/budget-engine typecheck && pnpm --filter @wandersphere/api typecheck && pnpm --filter @wandersphere/web typecheck"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "eslint": "^9.21.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.25.0"
+  }
+}
